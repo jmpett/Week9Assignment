@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search Owner</title>
+<style>
+/* CSS Coding */
+body  {
+	background: darkblue;
+    background: url(https://s3.amazonaws.com/dk-media-site-bsndenver/uploads/2015/10/SAF-1026.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+form {
+	text-align: center;
+	font-size: 125%;
+	font-weight: bold;
+	color: white;
+	text-shadow: 2px 2px #ff0000;
+}
+p {
+    text-align: center;
+    font-size: 150%;
+    text-shadow: 2px 2px #00008B;
+}
+/* unvisited link */
+a:link {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+<script>
+function validateForm() {
+    var y = document.forms["searchOwner"]["owner"].value;
+    if (y == "") {
+        alert("Owner must be filled out");
+        return false;
+    }
+} 
+</script>
+</head>
+<body>
+ <form name="searchOwner" action = "searchOwnerServlet" method="post" onsubmit="return validateForm()" >
+ Owner: <input type = "text" name = "owner">
+ <input type = "submit" value="Search Owner">
+</form>
+<p>
+<a href = "index.html"> Back to main menu</a><br />
+<a href = "searchOwner.html">Search on player via owner</a><br />
+</p>
+</body>
+</html>
+
+
+
+

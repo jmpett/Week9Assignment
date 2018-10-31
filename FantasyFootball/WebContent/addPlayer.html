@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Player</title>
+<style>
+body  {
+	background: darkblue;
+    background: url(https://www.desktopbackground.org/p/2014/06/16/778839_1920x1080-football-american-football-denver-broncos-stadium_1920x1080_h.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+form {
+	text-align: center;
+	color:white;
+	font-weight: bold;
+	font-size: 125%;
+	text-shadow: 2px 2px #FF0000;
+}
+p {
+	text-align: center;
+	font-size: 150%;
+	text-shadow: 2px 2px #00008B;
+}
+/* unvisited link */
+a:link {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+<script>
+function validateForm() {
+    var w = document.forms["addPlayer"]["team"].value;
+    var x = document.forms["addPlayer"]["name"].value;
+    var y = document.forms["addPlayer"]["owner"].value;
+    if (w == "") {
+        alert("Team must be filled out");
+        return false;
+    }
+    else if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    else if (y == "") {
+        alert("Owner must be filled out");
+        return false;
+    }
+} 
+</script>
+</head>
+<body>
+ <form name="addPlayer" action = "addPlayersServlet" method="post" onsubmit="return validateForm()">
+ Team: <input type ="text" name = "team">
+ Name: <input type = "text" name = "name">
+ Owner: <input type = "text" name = "owner">
+ <input type = "submit" value="Add Player">
+</form>
+<p>
+<a href = "viewAllPlayersServlet">View complete list</a><br />
+<a href = "searchOwner.html">Search on player via owner</a><br />
+<a href = "index.html"> Back to main menu</a><br />
+</p>
+</body>
+</html>
